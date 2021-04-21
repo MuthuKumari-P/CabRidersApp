@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
- <script src ="sample2.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
@@ -61,10 +60,31 @@ body {
 <input type="radio" id="other" name="gender" value="other">
 <label for="other">Other</label><br><br>
 </section>
-<button class="button">Submit</button><br>
+<button type="button" class="button" onClick="Login()">Submit</button><br>
 <video autoplay muted loop id="myVideo" width="600" height="500">
 <source src="https://player.vimeo.com/external/299230122.sd.mp4?s=a505811db3c8587b6bb9e52ca1d711e4d6b94952&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
 </video>
 </form> 
+ <script>
+    function Login()
+    {
+        event.preventDefault();
+        let username=document.querySelector("#name").value;
+        let mobileno=document.querySelector("#mobileno").value;
+        let password=document.querySelector("#password").value;
+        if(username.length>0 && mobileno.length==10 && password.length==8)
+        {
+         if(mobileno.charAt(0)=='0' || mobileno.charAt(0)=='1' || mobileno.charAt(0)=='2' || mobileno.charAt(0)=='3' || mobileno.charAt(0)=='4' || mobileno.charAt(0)<='5')
+        {
+            alert("Invalid Data")
+        }
+        else
+        {
+            alert("Registered successfully");
+            window.location.href="LoginPage.html";
+        }
+        }
+    }
+</script>
 </body>
 </html>
