@@ -13,7 +13,7 @@ function validate(){
         }
         else{
             alert("Registered successfully")
-            window.location.href="LoginPage.html";   
+            window.location="LoginPage.html";   
         }   
     }
     else{
