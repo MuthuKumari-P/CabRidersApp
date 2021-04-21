@@ -1,40 +1,42 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    div {
- width:"200px";
- height:"400px";
- padding:"10px";
- margin:auto;
- margin-top: 20mm;
- margin-left: 100mm;
- margin-right: 100mm;
- marker-end: 30mm;
- border-radius:20mm;
- border:3px solid rgb(250, 247, 247);
- background: rgb(94, 210, 214);
-    }
-  </style>
 <meta charset="ISO-8859-1">
-<title>BILL ESTIMATOR</title>
+<title>Insert title here</title>
+<style>
+div{
+    width:400px;
+    height:400px;
+    border:3px solid grey;
+    padding:50px;
+    margin-top:5px;
+    background:rgb(94, 210, 214);;
+
+}
+</style>
 </head>
 <body>
-    <div id="myDiv>
-<form>
 <center>
-<h1>Bill Estimator</h1>
-<label>Select cab type</label>
-<select name="cab type">
-<option value="micro" id="micro">MICRO</option>
-<option value="mini" id="mini">MINI</option>
-<option value="prime" id="prime">PRIME</option>
-</select><br><br>
-<label for="number">No.of Kilo meters</label>
-<input type="number" name="number" placeholder="Kilometer" id="kilometer" required><br><br>
-<button formaction="BillAmount.html">SUBMIT</button>
-</center>
+    <div  id="mydiv" >
+<form action="DateTime.html">
+<h3><b>CAB RIDER<b></h3><center>
+<img src="https://entrackr.com/wp-content/uploads/2019/02/Cab-booking-1200x600.jpg" width="200" height="200">
+</center><br>
+<label> Select Cab Type :</label>
+<select name="Cab Type" >
+  <option value="SELECT" >--SELECT</option>
+      <option value="MICRO" id="MIC">MICRO </option>
+      <option value="MINI"  id="MIN">MINI </option>
+      <option value="PRIME" id="PRI">PRIME</option>
+      </select>
+<br> <br>
+<label for="name">Enter Kilometer</label>
+<input type="number" name="name" id="Km" placeholder="Kilometer" required>
+<br><br>
+<button style="color:red"> SUBMIT </button>
 </form>
-    </div>
+</div>
+</center>
 </body>
 </html>
