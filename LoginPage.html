@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <script src ="sample.js"></script>
-    
+<head>    
 <link rel = "stylesheet" href = "olacss.css">
 <body>
 <meta charset="ISO-8859-1">
@@ -20,7 +18,28 @@
 <div class="wrong">
 <label for = "wrong" id="invalid">Invalid Login</label><br/><br/>
 </div></br>
-<button>submit</button>
+<button type="button" onClick="Login()">submit</button>
 </form>
+<script>
+        function Login()
+        {
+            event.preventDefault();
+            let username=document.querySelector("#name").value;
+            let mobileno=document.querySelector("#number").value;
+            let password=document.querySelector("#pass").value;
+            if(username.length>0 && mobileno.length==10 && password.length==8)
+            {
+             if(mobileno.charAt(0)=='0' || mobileno.charAt(0)=='1' || mobileno.charAt(0)=='2' || mobileno.charAt(0)=='3' || mobileno.charAt(0)=='4' || mobileno.charAt(0)<='5')
+            {
+                alert("Invalid login")
+            }
+            else
+            {
+                alert("Login successful");
+                window.location.href="CabType.html";
+            }
+            }
+        }
+    </script>
 </body>
 </html>
