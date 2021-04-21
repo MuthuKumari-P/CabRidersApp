@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+  background-color: gray;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+.button {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: red;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<form action=LoginPage.html method="post">
+<h1><center>REGISTRATION PAGE</center></h1>
+<label for="number">Enter Name</label>
+<input type="text" name="number" placeholder="Name" id="name" required><br><br>
+<label for="number">Enter Mobile Number</label>
+<input type="number" name="number" placeholder="Mobile No" size="10" id="mobileno" required><br><br>
+<label for="number">Enter E-mail ID</label>
+<input type="email" name="number" placeholder="Email id" id="emailid" required><br><br>
+<label for="password">Enter Password  </label>
+<input type="password" name="password" placeholder="Password" id="password" required><br><br>
+<section><h2>This is Language selection section</h2>
+<lable>Known Languages:</lable><br><br>
+<input type="checkbox" id="Language(c)" value="C">
+<label> C</label><br><br>
+<input type="checkbox" id="Language(c++)" value="C++">
+<label> C++</label><br><br>
+<input type="checkbox" id="Language(java)" value="JAVA">
+<label> JAVA</label><br><br>
+<input type="checkbox" id="Language(python)" value="PYTHON">
+<label>PYTHON</label><br><br>
+</section>
+<section><h2>This is gender section</h2><br>
+<lable>GENDER<lable><br><br>
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label><br><br>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label><br><br>
+<input type="radio" id="other" name="gender" value="other">
+<label for="other">Other</label><br><br>
+</section>
+<button class="button">Submit</button><br>
+<video autoplay muted loop id="myVideo" width="600" height="500">
+<source src="https://player.vimeo.com/external/299230122.sd.mp4?s=a505811db3c8587b6bb9e52ca1d711e4d6b94952&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+</video>
+</form> 
+</body>
+</html>
