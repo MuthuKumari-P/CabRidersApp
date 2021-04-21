@@ -3,7 +3,7 @@ function validate(){
     var user = document.getElementById("name").value;
     var pwd = document.getElementById("password").value;
     let mobileno=document.getElementById("mobileno").value;
-    let wrong = document.getElementById("invalid");
+    let 
     
     if(username.length>0 && mobileno.length==10 && password.length==8)
     {
@@ -17,7 +17,6 @@ function validate(){
         }   
     }
     else{
-      wrong.style.visibility="visible";
+      alert("Invalid Data");
     }
-  return false;
   }
