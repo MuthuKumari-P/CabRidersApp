@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CabType</title>
+<style>
+    div {
+ width:"200px";
+ height:"400px";
+ padding:"10px";
+ margin:auto;
+ margin-top: 20mm;
+ margin-left: 100mm;
+ margin-right: 100mm;
+ marker-end: 30mm;
+ border-radius:20mm;
+ border:3px solid rgb(250, 247, 247);
+ background: rgb(94, 210, 214);
+    }
+    ol{
+        display: table;
+        margin: auto;
+        margin-left: 5mm;
+ margin-right: 10mm;
+    }
+</style>
+</head>
+<body>
+    <center>
+    <div id="myDiv">
+<form>
+<h1 style="color:blue">CAB TYPES</h1>
+<table border="3">
+<thead>
+<tr><th>S.No</th><th>TYPE</th><th>Price per Km</th><th>Cab Image</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td><td>MICRO</td>
+<td>Rs. 10/-</td>
+<td><img src="https://lh3.googleusercontent.com/proxy/p9zNo63V--_p4qSNspD7f5MyLr4M5RVEPnHeFxLZnwZdeD27zaFnDPwruH3Y_M-VXY3WlStqVy0Y4v5BEiwNdquQfUnrUeEjNc9AIMNuYlj6kG4fVa1bbpiHXtQ" width="100" height="70"></td>
+</tr>
+<tr>
+<td>2.</td><td>MINI</td><td>Rs. 15/-</td>
+<td><img src="https://5.imimg.com/data5/GS/HD/VF/SELLER-80729603/mini-cab-500x500.png" width="100" height="70"></td></tr>
+<tr><td>3.</td><td>PRIME</td><td>Rs. 20/-</td>
+    <td><img src="https://content3.jdmagicbox.com/comp/def_content/car_hire/default-car-hire-18.jpg?clr=333333" width="100" height="70"></td>
+</tr>
+</tbody>
+</table><br>
+<label style=color:blue><b>CAB FACILITIES</b></label><br><br>
+<ol>
+<li>High Speed</li><br>
+<li>Low Price</li>
+</ol><br>
+<button onClick="amount()">NEXT</button><br><br>
+</center>
+</div>
+<script>
+    function amount()
+    {
+    event.preventDefault();
+    window.location.href="BillEstimator.html";
+    }
+</script>
+</form>
+</body>
+</html>
