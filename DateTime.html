@@ -28,6 +28,7 @@
 <script>
     function dateTimeValidation()
     {
+        let a,b,c,peakHourCharge;
         alert("Date Time valid");
         let time=document.querySelector("#time").value;
         let timeInt=time.substr(0,2);
@@ -35,10 +36,10 @@
         if(hour>=parseInt(17) && hour<=parseInt(19))
         {
             alert("peak hours");
-            let a=window.location.search.substr(6);
-            let b=a;
-            let c=parseFloat(b);
-            let peakHourCharge=c*1.25;
+            a=window.location.search.substr(6);
+            b=a;
+            c=parseFloat(b);
+            peakHourCharge=c*1.25;
             document.getElementById("peakHour").innerHTML="Peak hours charges" +peakHourCharge;
         }
         else{
