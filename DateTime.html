@@ -36,8 +36,9 @@
         {
             alert("peak hours");
             let a=window.location.search.substr(6);
-            let b=parseFloat(a);
-            let peakHourCharge=b*1.25;
+            let b=a;
+            let c=parseFloat(b);
+            let peakHourCharge=c*1.25;
             document.getElementById("peakHour").innerHTML="Peak hours charges" +peakHourCharge;
         }
         else{
