@@ -7,7 +7,7 @@
 <style>
 div{
     width:400px;
-    height:400px;
+    height:500px;
     border:3px solid grey;
     padding:50px;
     margin-top:5px;
@@ -18,25 +18,66 @@ div{
 </head>
 <body>
 <center>
-    <div  id="mydiv" >
-<form action="DateTime.html">
+    <div>
+<form>
 <h3><b>CAB RIDER<b></h3><center>
 <img src="https://entrackr.com/wp-content/uploads/2019/02/Cab-booking-1200x600.jpg" width="200" height="200">
 </center><br>
 <label> Select Cab Type :</label>
-<select name="Cab Type" >
-  <option value="SELECT" >--SELECT</option>
-      <option value="MICRO" id="MIC">MICRO </option>
-      <option value="MINI"  id="MIN">MINI </option>
-      <option value="PRIME" id="PRI">PRIME</option>
+<select name="Cab Type" id="cabtype" >
+  <option value="SELECT" disabled>---SELECT---</option>
+      <option value="MICRO">MICRO</option>
+      <option value="MINI">MINI</option>
+      <option value="PRIME">PRIME</option>
       </select>
 <br> <br>
 <label for="name">Enter Kilometer</label>
-<input type="number" name="name" id="Km" placeholder="Kilometer" required>
+<input type="number" name="kilometer" id="Km" placeholder="Kilometer" required>
 <br><br>
-<button style="color:red"> SUBMIT </button>
+<label>GST=7%</label><br/>
+<button type="button" style="color:red" onclick="priceCalculation()"> CALCULATE </button>&nbsp;
+<button type="button" style="color:red" onclick="DateTime.html"> NEXT>></button><br><br>
+<p id="result"></p>
+<p id="result1"></p>
+<p id="result2"></p>
 </form>
 </div>
 </center>
+<script>
+    function priceCalculation()
+    {
+   // event.preventDefault();
+    let cabtype=document.querySelector("#cabtype").value;
+    let kilometer=document.querySelector("#Km").value;
+    let km=parseInt(kilometer);
+    let price,gst,total;   
+    switch(cabtype)
+        {
+            case "MICRO":
+            {
+            price=km * 10;
+            break;
+            }
+            case "MINI":
+            {
+               price=km*15;
+                break;
+            }
+            default:
+            {
+                price=km*20;
+                break;
+            }
+        }
+            document.getElementById("result").innerHTML="Price:" +price+ "/-";
+            gst=(7*price)/100;
+            document.getElementById("result1").innerHTML="GST=Rs." +gst+ "/-";
+            total=gst+price;
+            document.getElementById("result2").innerHTML="Total price with GST=Rs." +total+ "/-";    
+   }
+</script>
 </body>
 </html>
+
+   
+
