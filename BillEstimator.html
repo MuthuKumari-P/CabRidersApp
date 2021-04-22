@@ -73,7 +73,8 @@ div{
             gst=(7*price)/100;
             document.getElementById("result1").innerHTML="GST=Rs." +gst+ "/-";
             total=gst+price;
-            document.getElementById("result2").innerHTML="Total price with GST=Rs." +total+ "/-";    
+            document.getElementById("result2").innerHTML="Total price with GST=Rs." +total+ "/-";
+            window.location.href = "DateTime.html?total=" +total; 
    }
     function nextpage()
     {
