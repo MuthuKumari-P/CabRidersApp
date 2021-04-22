@@ -1,42 +1,50 @@
-
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Date and Time</title>
-<center>
-<style>
-        div{
-            width:400px;
-            height:500px;
-            border:3px solid black;
-            padding:50px;
-            margin-top:5px;
-            background:rgb(216, 157, 211);
-            margin-left:100mm;
-            margin-right:100mm;
-            margin-end:200mm;
-            margin-start:300mm;
-        
-        }
-        </style></center>
+<title>Time&Date</title>
 </head>
-<body >
-<center>
-        <div  id="mydiv" >
+<body>
+<header>CAB BOOKING</header>
+<main>
 <form>
-        <h1 style="color:red"><center>!!Enjoy your Journey!!</center></h1>
+<label>Cab Types</label>
+<nav>
+<ul>
+<li>MICRO</li>
+<li>MINI</li>
+<li>PRIME</li>
+</ul>
+</nav><br>
 <label>Journey Date</label>
-<input type="date"name="Journey" id="date" placeholder="Journey Date" min="2021-04-22" max="2021-04-30" required>
-<br><br>
+<input type="date" name="journeydate" id="date" min="2021-04-23" required><br><br>
 <label>Journey Time</label>
-<input type ="time" name="Journey" id="Time" placeholder="Journey Date" required><br><br>
-<button style="color:#f012ad" formaction="DOB.html" >LOGIN</button><br><br>
-<center><img src="https://miro.medium.com/max/1024/0*JfsSJQk5j98gL3g7.jpg" width="300" height="300">
-</center>
-<br> <br>
-
+<input type="time" name="journeytime" id="time" min="09:50:00" required><br><br>
+<button type="button" onclick="dateTimeValidation()">SUMBIT</button>
+<p id="peakHour"></p>
 </form>
-</div>
-</center>
+</main>
+<footer>Registration 2021-2023</footer>
+<script>
+    function dateTimeValidation()
+    {
+        alert("Date Time valid");
+        let time=document.querySelector("#time").value;
+        let timeInt=time.substr(0,2);
+        let hour=parseInt(timeInt.substr(0,2));
+        if(hour>=parseInt(17) && hour<=parseInt(19))
+        {
+            alert("peak hours");
+            let a=window.location.search.substr(6);
+            let b=parseFloat(a);
+            let peakHourCharge=b*1.25;
+            document.getElementById("peakHour").innerHTML="Peak hours charges" +peakHourCharge;
+        }
+        else{
+            alert("not a peak hour");
+        }
+
+    }
+</script>
 </body>
 </html>
