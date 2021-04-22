@@ -7,7 +7,7 @@
 <style>
 div{
     width:400px;
-    height:500px;
+    height:700px;
     border:3px solid grey;
     padding:50px;
     margin-top:5px;
@@ -34,23 +34,33 @@ div{
 <label for="name">Enter Kilometer</label>
 <input type="number" name="kilometer" id="Km" placeholder="Kilometer" required>
 <br><br>
-<label>GST=7%</label><br/>
-<button type="button" style="color:red" onclick="priceCalculation()"> CALCULATE </button>&nbsp;&nbsp;
-<button type="button" style="color:red" onclick="nextpage()"> NEXT>></button><br><br>
+<label>GST = 7%</label><br/>
+<label>Journey Date</label>
+<input type="date" name="journeydate" id="date" min="2021-04-23" required><br><br>
+<label>Journey Time</label>
+<input type="time" name="journeytime" id="time" min="09:50:00" required><br><br>
+<label>AGE:</label>
+<input type="number" value="age" id="age" required><br><br>
+<button type="button" style="color:red" onclick="priceCalculation()"> CALCULATE </button>
 <p id="result"></p>
 <p id="result1"></p>
 <p id="result2"></p>
+<p id="peakHour"></p>
+<p id="amountwithpeakhour"></p>
+<p id="seniorcitizen"></p>
+<p id="notseniorcitizen"></p>
 </form>
 </div>
 </center>
 <script>
+    let total,amount;
     function priceCalculation()
     {
-   // event.preventDefault();
+   //event.preventDefault();
     let cabtype=document.querySelector("#cabtype").value;
     let kilometer=document.querySelector("#Km").value;
     let km=parseInt(kilometer);
-    let price,gst,total;   
+    let price,gst;   
     switch(cabtype)
         {
             case "MICRO":
@@ -73,13 +83,47 @@ div{
             gst=(7*price)/100;
             document.getElementById("result1").innerHTML="GST=Rs." +gst+ "/-";
             total=gst+price;
-            document.getElementById("result2").innerHTML="Total price with GST=Rs." +total+ "/-";
-            window.location.href = "DateTime.html?total=" +total; 
+            document.getElementById("result2").innerHTML="Total price with GST=Rs." +total+ "/-";  
+            dateTimeValidation(); 
    }
-    function nextpage()
+   function dateTimeValidation() 
     {
-        window.location.href="DateTime.html";
+        alert("Date Time valid");
+        let time=document.querySelector("#time").value;
+        let timeInt=time.substr(0,2);
+        let hour=parseInt(timeInt.substr(0,2));
+        if(hour>=parseInt(17) && hour<=parseInt(19))
+        {
+            alert("peak hours");
+            let a=total*0.0125;
+            /*let a=window.location.search.substr(6);
+            let b=parseFloat(a);
+            let peakHourCharge=b*1.25;*/
+            document.getElementById("peakHour").innerHTML="Peak hours charges=Rs." +a+"/-";
+            let totalPaymentwithPeakHour=a+total;
+            document.getElementById("amountwithpeakhour").innerHTML="Total bill after adding peak hour charges=Rs." +totalPaymentwithPeakHour+"/-";
+            seniorCitizen(totalPaymentwithPeakHour);
+        }
+        else{
+            alert("not a peak hour");
+            seniorCitizen(total);
+        }
+
     }
+   function seniorCitizen(amount)
+   {
+    let age=document.querySelector("#age").value;
+    let intOfAge=parseInt(age);
+    if(intOfAge>59)
+    {
+        let seniortotalPaymentwithPeakHour=amount/2;
+        document.getElementById("seniorcitizen").innerHTML="********YOU ARE A SENIOR CITIZEN******** \n WE WILL DISCOUNT 50% BILL AMOUNT FOR YOU        Your final bill amount is"+seniortotalPaymentwithPeakHour;
+    }
+    else{
+        document.getElementById("notseniorcitizen").innerHTML="You are not a senior citizen";
+    }
+       
+   }
 </script>
 </body>
 </html>
