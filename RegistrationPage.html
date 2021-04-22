@@ -9,7 +9,17 @@ body {
   font-size: 17px;
   background-color: gray;
 }
-
+div
+  {
+    width:200px;
+    height:700px;
+    border:0px;
+    margin:auto;
+    margin-top:0px;
+    margin-left:150px;
+    margin-right:100px;
+    background:color:green;
+  }
 .content {
   position: fixed;
   bottom: 0;
@@ -30,16 +40,17 @@ body {
 </style>
 </head>
 <body>
+  <div id="">
 <form method="post">
-<h1><center>CAB RIDER<br>REGISTRATION PAGE</center></h1>
+<h1><center>CAB RIDER<br/>REGISTRATION PAGE</center></h1>
 <label for="number">Enter Name</label>
 <input type="text" name="number" placeholder="Name" id="name" required><br><br>
 <label for="number">Enter Mobile Number</label>
-<input type="number" name="number" placeholder="Mobile No" size="10" id="mobileno" required><br><br>
+<input type="number" name="number" placeholder="Enter 10 digit Mobile No" id="mobileno" required><br><br>
 <label for="number">Enter E-mail ID</label>
 <input type="email" name="number" placeholder="Email id" id="emailid" required><br><br>
 <label for="password">Enter Password  </label>
-<input type="password" name="password" placeholder="Password" id="password" required><br><br>
+<input type="password" name="password" placeholder="Enter 8 digit Password" id="password" required><br><br>
 <section><h2>This is Language selection section</h2>
 <lable>Known Languages:</lable><br><br>
 <input type="checkbox" id="Language(c)" value="C">
@@ -86,5 +97,6 @@ body {
         }
     }
 </script>
+  </div>
 </body>
 </html>
