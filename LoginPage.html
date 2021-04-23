@@ -24,12 +24,14 @@ form{
 	border-radius: 20px;
 	text-align: center;
    width:30%;
+   height:350px;
    background : url(https://nathantravels.com/assets/images/slider-car/slider-bg-02.jpg);
    background-size:cover;
 }
+
 input{
 margin:5%;
-}	
+}
 </style>
 <meta charset="ISO-8859-1">
 <title>olaCab-booking </title>
@@ -40,14 +42,11 @@ margin:5%;
 <form>
 <h1>login page</h1>
 <label for ="name"></label>
-<input type = "name" name="name" id ="name" placeholder ="Name"><br/>
+<input type = "name" name="name" id ="name" placeholder ="Name" required><br/>
 <label for ="mobilenumber"></label>
-<input type = "number" name ="number"id ="number" placeholder ="Mobile Number">&nbsp;<p style=color:white>Mobile number should not start with 0,1,2,3,4,5</p>
+<input type = "number" name ="number"id ="number" placeholder ="Mobile Number" required>&nbsp;<p style=color:white>Mobile number should not start with 0,1,2,3,4,5</p>
 <label for= "password"></label>
-<input type="password" name ="password" id = "pass" placeholder ="Password"><br/>
-<div class="wrong">
-<label for = "wrong" id="invalid">Invalid Login</label><br/><br/>
-</div></br>
+<input type="password" name ="password" id = "pass" placeholder ="Password" required><br/>
 <button type="button" onClick="Login()">submit</button>
 
 <script>
@@ -59,7 +58,7 @@ margin:5%;
             let password=document.querySelector("#pass").value;
             if(username.length>0 && mobileno.length==10 && password.length==8) //Check all the Login Information
             {
-		    //mobile number should not start with 0,1,2,3,4,5
+                //mobile number should not start with 0,1,2,3,4,5
              if(mobileno.charAt(0)=='0' || mobileno.charAt(0)=='1' || mobileno.charAt(0)=='2' || mobileno.charAt(0)=='3' || mobileno.charAt(0)=='4' || mobileno.charAt(0)<='5')
             {
                 alert("Invalid login");
