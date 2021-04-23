@@ -3,9 +3,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
+.body {
+  margin:0;
+  font-family:"Arial";
   font-size: 17px;
   
 }
@@ -38,6 +38,7 @@ div
     <center>
 <form method="post">
 <h1><center>CAB RIDER<br/>REGISTRATION PAGE</center></h1>
+</center>
 <label for="number">Enter Name</label>&nbsp;
 <input type="text" name="number" placeholder="Name" id="name" required><br><br>
 <label for="number">Enter Mobile Number</label>
@@ -57,7 +58,7 @@ div
 <input type="checkbox" id="Language(python)" value="PYTHON">
 <label>Malayalam</label><br><br>
 </section>
-<section><h2>This is gender section</h2><br>
+<section><h2>This is gender section</h2>
 <lable>GENDER<lable><br><br>
 <input type="radio" id="male" name="gender" value="male">
 <label for="male">Male</label><br><br>
@@ -66,10 +67,12 @@ div
 <input type="radio" id="other" name="gender" value="other">
 <label for="other">Other</label><br><br>
 </section>
+<center>
 <button type="button" class="button" onClick="Login()">Submit</button>
 <video autoplay muted loop id="myVideo" width="600" height="500">
 <source src="https://player.vimeo.com/external/299230122.sd.mp4?s=a505811db3c8587b6bb9e52ca1d711e4d6b94952&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
 </video>
+</center>
 </form> 
  <script>
     function Login()
@@ -93,7 +96,6 @@ div
         }
     }
 </script>
-  </center>
   </div>
 </body>
 </html>
