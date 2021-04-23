@@ -63,6 +63,8 @@ div{
     let price,gst;  
         /*Check which cab type to be choosed by customer
         and calculate the price amount using switch case*/
+        if(km>0)
+        {
     switch(cabtype) 
         {
             case "MICRO":
@@ -87,6 +89,11 @@ div{
             total=gst+price;
             document.getElementById("result2").innerHTML="Total price with GST= Rs. " +total+ "/-";  //Display the price amount to the user with GST amount 
             dateTimeValidation(); 
+        }
+        else
+        {
+            alert("Please enter valid kilometer);
+        }
    }
    function dateTimeValidation() 
     {
