@@ -21,7 +21,7 @@ div{
 <form>
 <h3><b>CAB RIDER<b></h3><center>
 <img src="https://entrackr.com/wp-content/uploads/2019/02/Cab-booking-1200x600.jpg" width="200" height="200">
-<br>
+<br><br>
 <label> Select Cab Type :</label>
 <select name="Cab Type" id="cabtype" >
   <option value="SELECT" disabled>---SELECT---</option>
@@ -47,7 +47,7 @@ div{
 <p id="result2"></p>
 <p id="peakHour"></p>
 <p id="amountwithpeakhour"></p>
-<p id="seniorcitizen"></p>
+<p style="color:green"id="seniorcitizen"></p>
 <p id="notseniorcitizen"></p>
 </form>
 </div>
@@ -120,7 +120,7 @@ div{
         document.getElementById("seniorcitizen").innerHTML="********YOU ARE A SENIOR CITIZEN******** \n WE WILL DISCOUNT 50% BILL AMOUNT FOR YOU        Your final bill amount is"+seniortotalPaymentwithPeakHour;
     }
     else{
-        document.getElementById("notseniorcitizen").innerHTML="You are not a senior citizen";
+        document.getElementById("notseniorcitizen").innerHTML="You are not a seniorcitizen";
     }
        
    }
