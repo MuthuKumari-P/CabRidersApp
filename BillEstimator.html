@@ -57,49 +57,51 @@ div{
     function priceCalculation()
     {
    //event.preventDefault();
-    let cabtype=document.querySelector("#cabtype").value;
-    let kilometer=document.querySelector("#Km").value;
-    let km=parseInt(kilometer);
-    let price,gst;   
-    switch(cabtype)
+    let cabtype=document.querySelector("#cabtype").value; //Get the type of the cab from user
+    let kilometer=document.querySelector("#Km").value; //get the kilometer from the user
+    let km=parseInt(kilometer); //Convert String to integer
+    let price,gst;  
+        /*Check which cab type to be choosed by customer
+        and calculate the price amount using switch case*/
+    switch(cabtype) 
         {
             case "MICRO":
             {
-            price=km * 10;
+            price=km * 10; //micro=Rs.10/km
             break;
             }
             case "MINI":
             {
-               price=km*15;
+               price=km*15; //mini=Rs.15/km
                 break;
             } 
             default:
             {
-                price=km*20;
+                price=km*20; //micro=Rs.20/km
                 break;
             }
         }
-            document.getElementById("result").innerHTML="Price=Rs. " +price+ "/-";
+            document.getElementById("result").innerHTML="Price= Rs. " +price+ "/-"; //Display the price amount to the user without GST amount 
             gst=(7*price)/100;
-            document.getElementById("result1").innerHTML="GST=Rs. " +gst+ "/-";
+            document.getElementById("result1").innerHTML="GST= Rs. " +gst+ "/-"; //Display the GST amount to the user 
             total=gst+price;
-            document.getElementById("result2").innerHTML="Total price with GST=Rs. " +total+ "/-";  
+            document.getElementById("result2").innerHTML="Total price with GST= Rs. " +total+ "/-";  //Display the price amount to the user with GST amount 
             dateTimeValidation(); 
    }
    function dateTimeValidation() 
     {
         alert("Date Time valid");
-        let time=document.querySelector("#time").value;
-        let timeInt=time.substr(0,2);
-        let hour=parseInt(timeInt.substr(0,2));
-        if(hour>=parseInt(17) && hour<=parseInt(19))
+        let time=document.querySelector("#time").value; //get the time valu from the user
+        let timeInt=time.substr(0,2); //convert string to Int and get the hour from string
+        let hour=parseInt(timeInt.substr(0,2)); //convert string of hour hour to int
+        if(hour>=parseInt(17) && hour<=parseInt(19)) //peak hour condition
         {
             alert("peak hours");
-            let peakhour=total*0.0125;
+            let peakhour=total*0.0125; //peak hour amount=1.25%
             /*let a=window.location.search.substr(6);
             let b=parseFloat(a);
             let peakHourCharge=b*1.25;*/
-            document.getElementById("peakHour").innerHTML="Peak hours charges=Rs. " +peakhour+"/-";
+            document.getElementById("peakHour").innerHTML="Peak hours charges=Rs. " +peakhour+"/-"; 
             let totalPaymentwithPeakHour=peakhour+total;
             document.getElementById("amountwithpeakhour").innerHTML="Total bill after adding peak hour charges=Rs. " +totalPaymentwithPeakHour+"/-";
             seniorCitizen(totalPaymentwithPeakHour);
@@ -112,11 +114,11 @@ div{
     }
    function seniorCitizen(amount)
    {
-    let age=document.querySelector("#age").value;
-    let intOfAge=parseInt(age);
+    let age=document.querySelector("#age").value; //get the age from the user
+    let intOfAge=parseInt(age); //convert string of age age to integer
     if(intOfAge>59)
     {
-        let seniortotalPaymentwithPeakHour=amount/2;
+        let seniortotalPaymentwithPeakHour=amount/2; //50% Discount for Senior citizen
         document.getElementById("seniorcitizen").innerHTML="**********YOU ARE A SENIOR CITIZEN********** \n WE WILL DISCOUNT 50% BILL AMOUNT FOR YOU        Your final bill amount is Rs. "+seniortotalPaymentwithPeakHour;
    }
     else{
