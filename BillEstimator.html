@@ -100,7 +100,7 @@ div{
             let b=parseFloat(a);
             let peakHourCharge=b*1.25;*/
             document.getElementById("peakHour").innerHTML="Peak hours charges=Rs. " +peakhour+"/-";
-            let totalPaymentwithPeakHour=a+total;
+            let totalPaymentwithPeakHour=peakhour+total;
             document.getElementById("amountwithpeakhour").innerHTML="Total bill after adding peak hour charges=Rs. " +totalPaymentwithPeakHour+"/-";
             seniorCitizen(totalPaymentwithPeakHour);
         }
